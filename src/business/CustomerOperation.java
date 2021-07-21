@@ -30,8 +30,9 @@ public class CustomerOperation {
 
         for(int i = 0 ; i < customerArrayList.size() ; ++i){
 
-            if(customerArrayList.get(i).getid()==customer.getid())
-                customerArrayList.add(i , customer);
+            if(customerArrayList.get(i).getid()==customer.getid()) {
+                customerArrayList.set(i , customer);
+            }
         }
     }
     public String getCustomerInfo(int id){
@@ -42,5 +43,8 @@ public class CustomerOperation {
             }
         }
         return "Customer with " + id + "not found .";
+    }
+    public void printAllCustomers(){
+        System.out.println(customerArrayList);
     }
 }
